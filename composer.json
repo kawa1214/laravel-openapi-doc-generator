@@ -1,0 +1,40 @@
+{
+  "name": "ryo/laravel-openapi-doc-generator",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "OpenApiGenerator\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Ryo Kawamura",
+      "email": "kawa1214mura@gmail.com"
+    }
+  ],
+  "require-dev": {
+    "phpstan/phpstan": "^1.8",
+    "pestphp/pest": "^1.22"
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "scripts": {
+    "test": [
+      "./vendor/bin/pest"
+    ],
+    "analyze": [
+      "vendor/bin/phpstan analyse src tests"
+    ],
+    "format": [
+      "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix ./"
+    ]
+  },
+  "require": {
+    "illuminate/testing": "^9.33",
+    "illuminate/http": "^9.33"
+  }
+}
